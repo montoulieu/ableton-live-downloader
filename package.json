@@ -1,0 +1,21 @@
+{
+  "name": "Ableton Live 9/10 Downloader",
+  "version": "1.0.0",
+  "description": "Downloader utility for Ableton Live installer",
+  "author": "Pieter Montoulieu",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.3.4",
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
