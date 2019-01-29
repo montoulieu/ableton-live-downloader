@@ -1,7 +1,7 @@
 {
   "name": "ableton-live-downloader",
   "version": "1.0.0",
-  "description": "Downloader utility for Ableton Live installer",
+  "description": "Downloads the desired 64-bit installer from Ableton Live servers",
   "author": "Pieter Montoulieu",
   "private": true,
   "scripts": {
