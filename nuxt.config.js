@@ -19,6 +19,10 @@ module.exports = {
     ]
   },
 
+  router: {
+    base: '/ableton-live-downloader/'
+  },
+
   /*
   ** Customize the progress-bar color
   */
@@ -51,7 +55,6 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    publicPath: '/ableton-live-downloader/',
     extend(config, ctx) {
 
     }
