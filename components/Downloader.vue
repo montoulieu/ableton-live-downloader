@@ -133,7 +133,7 @@ export default {
   font-weight: bold;
   -webkit-appearance: none;
   text-align: left;
-  min-width: 150px;
+  min-width: 110px;
 }
 </style>
 
