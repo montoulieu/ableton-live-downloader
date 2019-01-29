@@ -51,7 +51,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    publicPath: 'https://pi-mont.github.io/ableton-live-downloader/',
+    publicPath: '/ableton-live-downloader/',
     extend(config, ctx) {
 
     }
