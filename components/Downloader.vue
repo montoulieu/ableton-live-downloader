@@ -1,7 +1,7 @@
 <template>
   <div class="live-downloader py-5">
     <form class="form-inline justify-content-center">
-      <div class="form-group mr-5 mb-2">
+      <div class="form-group mr-md-5 mb-4 mb-sm-2">
         <label for="inputOS" class="mr-3 text-uppercase font-weight-bold">OS</label>
         <select id="inputOS" class="form-control" v-model="os">
           <option selected>Choose...</option>
@@ -9,14 +9,14 @@
           <option value="win">Windows</option>
         </select>
       </div>
-      <div class="form-group mr-5 mb-2">
+      <div class="form-group mr-md-5 mb-4 mb-sm-2">
         <label for="inputVersion" class="mr-3 text-uppercase font-weight-bold">Version</label>
         <select id="inputVersion" class="form-control" v-model="version">
           <option selected>Choose...</option>
           <option v-for="version in versions" :key="version.id">{{ version }}</option>
         </select>
       </div>
-      <div class="form-group mr-5 mb-2">
+      <div class="form-group mr-md-5 mb-3 mb-sm-2">
         <label for="inputEdition" class="mr-3 text-uppercase font-weight-bold">Edition</label>
         <select id="inputEdition" class="form-control" v-model="edition">
           <option selected>Choose...</option>
@@ -26,7 +26,7 @@
           <option value="trial">Trial</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-light text-uppercase font-weight-bold mb-2" v-on:click="download">Download</button>
+      <button type="submit" class="btn btn-light text-uppercase font-weight-bold mt-3 mt-md-0 mb-2" v-on:click="download">Download</button>
     </form>
   </div>
 </template>
@@ -147,6 +147,39 @@ export default {
   -webkit-appearance: none;
   text-align: left;
   min-width: 130px;
+}
+
+@media screen and (max-width: 575px) {
+  .form-group:after {
+    bottom: 17px;
+  }
+  .btn {
+    width: 100%;
+  }
+  .form-inline .form-group {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-inline {
+    display: block;
+  }
+  .form-group:after {
+    right: 13px;
+  }
+  .form-group {
+    /* background: red; */
+    width: 280px;
+    margin: 0 auto;
+
+  }
+  .form-group label {
+    width: 100px;
+  }
+  .form-control {
+    min-width: 160px;
+  }
 }
 </style>
 

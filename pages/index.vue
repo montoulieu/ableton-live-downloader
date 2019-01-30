@@ -50,4 +50,9 @@ body {
   border-radius: 0;
 }
 
+@media (min-width: 768px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 </style>
