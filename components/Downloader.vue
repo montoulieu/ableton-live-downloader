@@ -40,9 +40,16 @@ export default {
   },
   data() {
     return {
+      // Example path:
       // https://cdn-downloads.ableton.com/channels/10.0.6/ableton_live_suite_10.0.6_64.dmg
+
       cdn_path: 'https://cdn-downloads.ableton.com/channels/',
       versions: [
+        // Future version numbers for when they release 🥳
+        // '10.1',
+        // '10.0.9',
+        // '10.0.8',
+        // '10.0.7',
         '10.0.6',
         '10.0.5',
         '10.0.4',
@@ -93,13 +100,19 @@ export default {
       event.preventDefault();
       let url = this.cdn_path;
 
-      if (this.os === 'mac') {
-        url += this.version + '/ableton_live_suite_' + this.version + '_64.dmg';
+      if(this.os == 'Choose...' || this.edition == 'Choose...' || this.version == 'Choose...') {
+        alert('Please choose an option from each dropdown menu.');
       } else {
-        url += this.version + '/ableton_live_suite_' + this.version + '_64.zip';
+        url += this.version + '/ableton_live_suite_' + this.version;
+
+        if (this.os === 'mac') {
+          url += '_64.dmg';
+        } else {
+          url += '_64.zip';
+        }
+        window.open(url);
+        console.log('Download Path' + url);
       }
-      window.open(url);
-      console.log('Download Path' + url);
     }
   }
 }
