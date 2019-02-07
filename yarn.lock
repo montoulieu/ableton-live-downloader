@@ -7070,8 +7070,8 @@ watchpack@^1.5.0:
 
 webpack-bundle-analyzer@^3.0.3:
   version "3.0.3"
-  resolved "https://wowinc.jfrog.io/wowinc/api/npm/npm/webpack-bundle-analyzer/-/webpack-bundle-analyzer-3.0.3.tgz#dbc7fff8f52058b6714a20fddf309d0790e3e0a0"
-  integrity sha1-28f/+PUgWLZxSiD93zCdB5Dj4KA=
+  resolved "https://registry.yarnpkg.com/webpack-bundle-analyzer/-/webpack-bundle-analyzer-3.0.3.tgz#dbc7fff8f52058b6714a20fddf309d0790e3e0a0"
+  integrity sha512-naLWiRfmtH4UJgtUktRTLw6FdoZJ2RvCR9ePbwM9aRMsS/KjFerkPZG9epEvXRAw5d5oPdrs9+3p+afNjxW8Xw==
   dependencies:
     acorn "^5.7.3"
     bfj "^6.1.1"
