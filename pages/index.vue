@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div class="text-light">
-      <Logo />
+      <!-- <Logo /> -->
       <Header />
       <Downloader/>
       <Footer/>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+// import Logo from '~/components/Logo.vue'
 import Downloader from '~/components/Downloader.vue'
 import Revenue from '~/components/Revenue.vue'
 import Header from '~/components/Header.vue'
@@ -19,7 +19,7 @@ import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    Logo,
+    // Logo,
     Downloader,
     Revenue,
     Header,
