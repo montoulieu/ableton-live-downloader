@@ -11,7 +11,6 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
 import Downloader from '~/components/Downloader.vue'
 import Revenue from '~/components/Revenue.vue'
 import Header from '~/components/Header.vue'
