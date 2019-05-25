@@ -20,7 +20,7 @@ module.exports = {
   },
 
   router: {
-    base: '/ableton-live-downloader/'
+    // base: '/ableton-live-downloader/'
   },
 
   /*
