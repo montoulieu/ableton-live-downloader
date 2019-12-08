@@ -46,9 +46,13 @@ export default {
       cdn_path: 'https://cdn-downloads.ableton.com/channels/',
       versions: [
         // Future version numbers for when they release
+
+        // '10.3',
         // '10.2',
+        // '10.1.8',
+        // '10.1.7', 
         // '10.1.6',        
-        // '10.1.5',
+        '10.1.5',
         '10.1.4',
         '10.1.3',
         '10.1.2',
