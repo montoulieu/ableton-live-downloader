@@ -32,12 +32,8 @@
 </template>
 
 <script>
-import VersionDropdown from '~/components/VersionDropdown.vue'
 
 export default {
-  components: {
-    VersionDropdown
-  },
   data() {
     return {
       // Example path:
@@ -49,10 +45,11 @@ export default {
 
         // '10.3',
         // '10.2',
+        '10.1.14',
         '10.1.13',
         '10.1.9',
-        '10.1.7', 
-        '10.1.6',        
+        '10.1.7',
+        '10.1.6',
         '10.1.5',
         '10.1.4',
         '10.1.3',
