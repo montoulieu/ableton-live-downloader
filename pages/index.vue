@@ -1,6 +1,6 @@
 <template>
-  <section class="container">
-    <div class="text-light">
+  <section class="container mx-auto text-center">
+    <div class="text-white">
       <!-- <Logo /> -->
       <Header />
       <Downloader/>
@@ -30,19 +30,17 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700');
 
+html,
+#__nuxt,
+#__layout {
+  height: 100%;
+}
+
 body {
   font-family: "PT Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: black;
-}
-
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  height: 100%;
 }
 
 .btn {
