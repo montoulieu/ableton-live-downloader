@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex items-center justify-center">
+  <div class="h-full sm:flex items-center justify-center py-10">
     <nuxt />
   </div>
 </template>

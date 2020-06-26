@@ -1,10 +1,10 @@
 <template>
-  <div class="live-downloader py-5 mb-5 sm:mb-10">
+  <div class="live-downloader py-5 mb-5 sm:mb-10 px-3">
     <form class="sm:flex justify-center">
 
       <!-- Select: OS -->
       <div class="select-wrapper md:mr-10 mb-4 sm:mb-0">
-        <label for="inputOS" class="mr-3 text-uppercase font-bold">OS</label>
+        <label for="inputOS" class="mr-3 mb-2 sm:mb-0 text-uppercase font-bold">OS</label>
         <select id="inputOS" class="form-control" v-model="os">
           <option selected>Choose...</option>
           <option value="mac">macOS</option>
@@ -14,7 +14,7 @@
 
       <!-- Select: Version -->
       <div class="select-wrapper md:mr-10 mb-4 sm:mb-0">
-        <label for="inputVersion" class="mr-3 text-uppercase font-bold">Version</label>
+        <label for="inputVersion" class="mr-3 mb-2 sm:mb-0 text-uppercase font-bold">Version</label>
         <select id="inputVersion" class="form-control" v-model="version">
           <option selected>Choose...</option>
           <option v-for="version in versions" :key="version.id">{{ version }}</option>
@@ -22,8 +22,8 @@
       </div>
 
       <!-- Select: Edition -->
-      <div class="select-wrapper md:mr-10 mb-3 sm:mb-0">
-        <label for="inputEdition" class="mr-3 text-uppercase font-bold">Edition</label>
+      <div class="select-wrapper md:mr-10 mb-5 sm:mb-0">
+        <label for="inputEdition" class="mr-3 mb-2 sm:mb-0 text-uppercase font-bold">Edition</label>
         <select id="inputEdition" class="form-control" v-model="edition">
           <option selected>Choose...</option>
           <option value="suite">Suite</option>
@@ -35,8 +35,8 @@
 
       <button
         type="submit"
-        class="btn bg-white text-black hover:opacity-75 transition-color duration-200 uppercase px-3 font-bold mt-3 md:mt-0"
-        @click="download"
+        class="btn bg-white text-black hover:opacity-75 transition-color duration-200 uppercase px-3 py-3 sm:py-0 font-bold mt-3 md:mt-0"
+        @click.prevent="download"
       >
         Download
       </button>
@@ -116,9 +116,8 @@ export default {
     }
   },
   methods: {
-    download: function (event) {
-      event.preventDefault();
-      let url = this.cdn_path;
+    download: function () {
+      const url = this.cdn_path;
 
       if(this.os == 'Choose...' || this.edition == 'Choose...' || this.version == 'Choose...') {
         alert('Please choose an option from each dropdown menu.');
@@ -130,8 +129,8 @@ export default {
         } else {
           url += '_64.zip';
         }
+
         window.open(url);
-        console.log('Download Path' + url);
       }
     }
   }
@@ -176,10 +175,14 @@ select {
 }
 
 @media screen and (max-width: 575px) {
+  .select-wrapper {
+    flex-direction: column;
+  }
   .select-wrapper:after {
     bottom: 17px;
   }
-  .btn {
+  .btn,
+  .form-control {
     width: 100%;
   }
   form .select-wrapper {
@@ -197,7 +200,6 @@ select {
   .select-wrapper {
     /* background: red; */
     width: 280px;
-    margin: 0 auto;
 
   }
   .select-wrapper label {
