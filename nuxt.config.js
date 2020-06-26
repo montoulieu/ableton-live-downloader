@@ -2,7 +2,7 @@ const pkg = require('./package')
 
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
@@ -44,9 +44,8 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: [,
-    // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'
+  buildModules: [
+    '@nuxtjs/tailwindcss'
   ],
 
   /*
@@ -57,7 +56,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-
     }
   }
 }
