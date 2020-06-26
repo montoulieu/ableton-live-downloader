@@ -115,9 +115,10 @@ export default {
       version: 'Choose...',
     }
   },
+
   methods: {
     download: function () {
-      const url = this.cdn_path;
+      let url = this.cdn_path;
 
       if(this.os == 'Choose...' || this.edition == 'Choose...' || this.version == 'Choose...') {
         alert('Please choose an option from each dropdown menu.');
