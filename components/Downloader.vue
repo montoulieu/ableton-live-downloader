@@ -56,7 +56,7 @@ export default {
       versions: [
         // Future version numbers for when they release
 
-        // '10.3',
+        '11.0',
         '10.1.30',
         '10.1.25',
         '10.1.18',
