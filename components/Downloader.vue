@@ -66,6 +66,8 @@ export default {
       versions: [
         // Future version numbers for when they release
 
+        // "11.1",
+        "11.0.12",
         "11.0.11",
         "11.0.10",
         "11.0.6",
