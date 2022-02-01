@@ -8,7 +8,8 @@
         >
         <select id="inputOS" class="form-control" v-model="os">
           <option selected>Choose...</option>
-          <option value="mac">macOS</option>
+          <option value="mac_intel">macOS (Intel)</option>
+          <option value="mac_silicon">macOS (Silicon)</option>
           <option value="win">Windows</option>
         </select>
       </div>
@@ -22,9 +23,9 @@
         >
         <select id="inputVersion" class="form-control" v-model="version">
           <option selected>Choose...</option>
-          <option v-for="version in versions" :key="version.id">{{
-            version
-          }}</option>
+          <option v-for="version in versions" :key="version.id">
+            {{ version }}
+          </option>
         </select>
       </div>
 
@@ -56,6 +57,7 @@
 </template>
 
 <script>
+import versions from "../data/versions.json";
 export default {
   data() {
     return {
@@ -63,83 +65,15 @@ export default {
       // https://cdn-downloads.ableton.com/channels/10.0.6/ableton_live_suite_10.0.6_64.dmg
 
       cdn_path: "https://cdn-downloads.ableton.com/channels/",
-      versions: [
-        // Future version numbers for when they release
-
-        // "11.1.1",
-        "11.1",
-        "11.0.12",
-        "11.0.11",
-        "11.0.10",
-        "11.0.6",
-        "11.0.5",
-        "11.0.2",
-        "11.0.1",
-        "11.0",
-        "10.1.30",
-        "10.1.25",
-        "10.1.18",
-        "10.1.17",
-        "10.1.15",
-        "10.1.14",
-        "10.1.13",
-        "10.1.9",
-        "10.1.7",
-        "10.1.6",
-        "10.1.5",
-        "10.1.4",
-        "10.1.3",
-        "10.1.2",
-        "10.1.1",
-        "10.1",
-        "10.0.6",
-        "10.0.5",
-        "10.0.4",
-        "10.0.3",
-        "10.0.2",
-        "10.0.1",
-        "10.0",
-        "9.7.7",
-        "9.7.6",
-        "9.7.5",
-        "9.7.4",
-        "9.7.3",
-        "9.7.2",
-        "9.7.1",
-        "9.7",
-        "9.6.2",
-        "9.6.1",
-        "9.6",
-        "9.5",
-        "9.2.3",
-        "9.2.2",
-        "9.2.1",
-        "9.2",
-        "9.1.10",
-        "9.1.9",
-        "9.1.8",
-        "9.1.7",
-        "9.1.6",
-        "9.1.5",
-        "9.1.4",
-        "9.1.3",
-        "9.1.2",
-        "9.1",
-        "9.0.6",
-        "9.0.5",
-        "9.0.4",
-        "9.0.3",
-        "9.0.2",
-        "9.0.1"
-      ],
+      versions: versions,
       os: "Choose...",
       edition: "Choose...",
-      version: "Choose..."
+      version: "Choose...",
     };
   },
 
   methods: {
-    download: function() {
+    download: function () {
       let url = this.cdn_path;
 
       if (
@@ -151,16 +85,25 @@ export default {
       } else {
         url += this.version + "/ableton_live_suite_" + this.version;
 
-        if (this.os === "mac") {
-          url += "_64.dmg";
+        if (this.os.startsWith("mac")) {
+          // Update for Apple Silicon version of 11.1
+          if (this.version.startsWith("11.1")) {
+            if (this.os == "mac_intel") {
+              url += "_intel.dmg";
+            } else {
+              url += "_universal.dmg";
+            }
+          } else {
+            url += "_64.dmg";
+          }
         } else {
           url += "_64.zip";
         }
 
         window.open(url);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
