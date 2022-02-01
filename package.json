@@ -11,9 +11,9 @@
     "generate": "nuxt build && nuxt export"
   },
   "dependencies": {
-    "nuxt": "^2.13.2"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^2.0.0"
+    "@nuxtjs/tailwindcss": "^2.1.1"
   }
 }
