@@ -58,6 +58,8 @@
 
 <script>
 import versions from "../data/versions.json";
+import { compareVersions } from "compare-versions";
+
 export default {
   data() {
     return {
@@ -75,7 +77,7 @@ export default {
   methods: {
     download: function () {
       let url = this.cdn_path;
-
+      console.log(this.version.match(/./g).length);
       if (
         this.os == "Choose..." ||
         this.edition == "Choose..." ||
@@ -86,8 +88,8 @@ export default {
         url += this.version + "/ableton_live_suite_" + this.version;
 
         if (this.os.startsWith("mac")) {
-          // Update for Apple Silicon version of 11.1
-          if (this.version.startsWith("11.1")) {
+          // Updates for Apple Silicon universal binary
+          if (compareVersions(this.version, "11.0.12") > 0) {
             if (this.os == "mac_intel") {
               url += "_intel.dmg";
             } else {
