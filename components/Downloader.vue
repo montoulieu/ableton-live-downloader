@@ -77,7 +77,7 @@ export default {
   methods: {
     download: function () {
       let url = this.cdn_path;
-      console.log(this.version.match(/./g).length);
+
       if (
         this.os == "Choose..." ||
         this.edition == "Choose..." ||
