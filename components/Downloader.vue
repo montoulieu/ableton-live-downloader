@@ -85,7 +85,7 @@ export default {
       ) {
         alert("Please choose an option from each dropdown menu.");
       } else {
-        url += this.version + "/ableton_live_suite_" + this.version;
+        url += `${this.version}/ableton_live_${this.edition}_${this.version}`;
 
         if (this.os.startsWith("mac")) {
           // Updates for Apple Silicon universal binary
